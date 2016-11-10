@@ -24,6 +24,8 @@ gem 'bcrypt', :require => 'bcrypt'
 
 gem 'mail_form'
 
+gem 'will_paginate', '~> 3.0'
+
 gem 'simple_form'
 
 # Use jquery as the JavaScript library

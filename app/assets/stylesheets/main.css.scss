@@ -58,6 +58,12 @@ section .container{
 	height: 38px !important;
 }
 
+.search-form .form-group{
+	display: inline-block !important;
+	margin-bottom: 0 !important;
+	vertical-align: middle !important;
+}
+
 .search-form .btn{
 	border-radius: 0 !important;
 	height: 38px !important;

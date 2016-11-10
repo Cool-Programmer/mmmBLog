@@ -5,4 +5,7 @@ class Category < ApplicationRecord
 			minimum: 3,
 			maximum: 250
 		}
+	def self.search(query)
+		where("name like ?", "%#{query}%")
+	end
 end
