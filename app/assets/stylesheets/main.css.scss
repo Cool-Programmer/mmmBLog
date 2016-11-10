@@ -1,0 +1,126 @@
+body{
+	font-family: Arial, sans-serif;
+	background: $bodyBg;
+	line-height: 1.6em;
+}
+
+section .container{
+	min-height: 600px;
+}
+
+.navbar{
+	overflow: auto;
+	min-height: 100px;
+	background: $primaryClr;
+	color: $wht;
+	font-size: 18px;
+	border: 0;
+	border-radius: 0;
+}
+
+.navbar h1{
+	margin: 18px 0 0 0;
+	font-size: 25px !important;
+	padding: 0;
+}
+
+.navbar h1 a{
+	font-size: 35px; 
+}
+
+.navbar a{
+	color: $wht !important;
+}
+
+.navbar a:hover{
+	color: #ff953f;
+}
+
+.navbar a .navbar-brand:hover{
+	color: $wht !important;
+}
+
+.navbar ul{
+	margin-top: 22px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+	color: $secondClr !important;
+	background: none !important;
+}
+
+.search-form{
+	margin-top: 32px;
+}
+
+.search-form input{
+	border-radius: 0 !important;
+	height: 38px !important;
+}
+
+.search-form .btn{
+	border-radius: 0 !important;
+	height: 38px !important;
+	margin-top: 0;
+	margin-left: -5px; 
+	background: $secondClr !important;
+}
+
+.search-form .form-control{
+	background: #f4f4f4 !important;
+	border: 1px solid $bodyBg;
+}
+
+.btn-primary{
+	background: $secondClr !important;
+}
+
+.btn:hover{
+	background: $gray !important;
+}
+
+
+
+.post img{
+	width: 100%;
+}
+
+.post{
+	border: 1px solid #ccc;
+	background: $wht;
+	margin-bottom: 30px;
+}
+
+.post-content{
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.post h3{
+	margin: 0;
+	padding: 0;
+}
+
+.post small{
+	background: $primaryClr;
+	color: $wht;
+	display: block;
+	margin: 10px 0;
+	padding: 5px 10px;
+}
+
+.btn{
+	border: none;
+	border-radius: 0;
+}
+
+
+
+footer{
+	background: $primaryClr;
+	text-align: center;
+	color: $wht;
+	height: 60px;
+	padding-top: 20px;
+	margin-top: 30px;
+}
