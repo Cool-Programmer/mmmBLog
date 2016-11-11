@@ -1,49 +1,23 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="post">
-      <img src="img/goForth.jpg" class="img-responsive" alt="">
-      <div class="post-content">
-        <h3>Lorem Ipsum Rocks</h3>
-        <small>Posted by Mherion on November 14, 2016</small>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quis earum ut, ad magni. Ipsum vel sint dolorem, earum incidunt in amet libero ipsa officiis, voluptas, asperiores autem deserunt a. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorum magnam perspiciatis saepe debitis esse aut ipsa deleniti non libero, animi iusto, culpa cum autem. Reiciendis accusamus recusandae sit, qui?</p>
-        <a href="#" class="btn btn-primary btn-block">Read More</a>
+<div id="post-index">
+  <% if @posts.exists? %>
+    <% @posts.each_slice(2) do |post| %>
+    <div class="row">
+    <% post.each do |post| %>
+      <div class="col-md-6">
+        <div class="post">
+          <%= image_tag post.image.url, width:'100%', class: 'img-responsive thumbnail' %>
+          <div class="post-content">
+            <h3><%= post.title %></h3>
+            <small>Posted by <%= post.user.name %> on <%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %></small>
+            <p><%= raw post.body.truncate(120) %></p>
+            <%= link_to 'Read More', post_path(post), class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="post">
-      <img src="img/goForth.jpg" class="img-responsive" alt="">
-      <div class="post-content">
-        <h3>Lorem Ipsum Rocks</h3>
-        <small>Posted by Mherion on November 14, 2016</small>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quis earum ut, ad magni. Ipsum vel sint dolorem, earum incidunt in amet libero ipsa officiis, voluptas, asperiores autem deserunt a. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorum magnam perspiciatis saepe debitis esse aut ipsa deleniti non libero, animi iusto, culpa cum autem. Reiciendis accusamus recusandae sit, qui?</p>
-        <a href="#" class="btn btn-primary btn-block">Read More</a>
+      <% end %>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="post">
-      <img src="img/goForth.jpg" class="img-responsive" alt="">
-      <div class="post-content">
-        <h3>Lorem Ipsum Rocks</h3>
-        <small>Posted by Mherion on November 14, 2016</small>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quis earum ut, ad magni. Ipsum vel sint dolorem, earum incidunt in amet libero ipsa officiis, voluptas, asperiores autem deserunt a. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorum magnam perspiciatis saepe debitis esse aut ipsa deleniti non libero, animi iusto, culpa cum autem. Reiciendis accusamus recusandae sit, qui?</p>
-        <a href="#" class="btn btn-primary btn-block">Read More</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="post">
-      <img src="img/goForth.jpg" class="img-responsive" alt="">
-      <div class="post-content">
-        <h3>Lorem Ipsum Rocks</h3>
-        <small>Posted by Mherion on November 14, 2016</small>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quis earum ut, ad magni. Ipsum vel sint dolorem, earum incidunt in amet libero ipsa officiis, voluptas, asperiores autem deserunt a. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorum magnam perspiciatis saepe debitis esse aut ipsa deleniti non libero, animi iusto, culpa cum autem. Reiciendis accusamus recusandae sit, qui?</p>
-        <a href="#" class="btn btn-primary btn-block">Read More</a>
-      </div>
-    </div>
-  </div>
+    <% end %>
+    <% else %>
+    <p>There are currently no posts :( </p>
+  <% end %>
 </div>

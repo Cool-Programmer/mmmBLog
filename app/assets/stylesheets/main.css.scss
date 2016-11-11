@@ -24,6 +24,10 @@ section .container{
 	right: 10px;
 }
 
+.bgmksm{
+	width: 60%;
+}
+
 .navbar h1{
 	margin: 18px 0 0 0;
 	font-size: 25px !important;
@@ -126,7 +130,13 @@ section .container{
 	border-radius: 0;
 }
 
+.comment-img{
+	width: 100%;
+}
 
+.text-small{
+	font-size: 12px;
+}
 
 footer{
 	background: $primaryClr;
