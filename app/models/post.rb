@@ -2,6 +2,8 @@ class Post < ApplicationRecord
 	belongs_to :category
 	belongs_to :user
 	has_many :comments
+	has_attached_file :image, :default_url => ":style/post.jpg"
+	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 	# Validation
 	validates :title, presence: true,
@@ -23,5 +25,7 @@ class Post < ApplicationRecord
 	def self.search(query)
 		where("title like ? OR body like ?", "%#{query}%", "%#{query}%")
 	end
+
+
 
 end

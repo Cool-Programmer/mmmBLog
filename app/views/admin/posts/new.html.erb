@@ -36,9 +36,16 @@
 
 	<div class="form-group">
 		<%= f.label :body %>
-		<%= f.text_area :body, class: 'form-control' %>
+		<%= f.text_area :body, class: 'form-control', id:'edit' %>
 	</div>
 
 	<%= f.submit 'Add Post', class: 'btn btn-primary' %>
 	<%= link_to 'Cancel', admin_posts_path, class: 'btn btn-default' %>
 <% end %>
+
+<!-- Initialize the editor. -->
+  <script>
+      $(function() {
+          $('#edit').froalaEditor()
+      });
+  </script>
