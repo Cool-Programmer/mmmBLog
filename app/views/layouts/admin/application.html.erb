@@ -37,6 +37,16 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
+          
+          <div id="user-nav" class="pull-right">
+            <% if current_user %>
+            Logged in as <%= current_user.email %>
+            <%= link_to 'Logout', admin_logout_path %>  
+            <% else %>
+            <%= link_to 'Log In', admin_login_path %>
+            <% end %>
+          </div>
+
             <% if flash[:notice] %>
               <div class="alert alert-success fade in">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
